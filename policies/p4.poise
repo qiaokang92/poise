@@ -1,0 +1,10 @@
+//P4: Allow if admin is online
+//Headers: h1: dev_id
+
+//Define admin dev id list
+def list1 := [ 0001 0002 0003 ]
+
+//Implicit behavior: Counter gets refreshed.
+m0 := monitor (h1 in list1)
+
+if match (m0) then fwd1 else drop

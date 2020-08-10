@@ -1,0 +1,5 @@
+//P6: Scrub traffic if UI overlapping.
+//Headers: h1 UI_Overlap_status. 1: OVERLAPPING, 0: GOOD
+//Port 2 is the special port for DPI or traffic scrubbing.
+
+if match (h1 == 1) then fwd2 else fwd1

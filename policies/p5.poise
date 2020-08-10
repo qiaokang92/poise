@@ -1,0 +1,4 @@
+//P5: Block requests if user touchscreen is inactive
+//Headers: h1: userscreen_status, 1: ON, 0: OFF
+
+if match (h1 == 0) then drop else fwd1

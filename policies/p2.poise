@@ -1,0 +1,8 @@
+//P2: Direct guest traffic through a special middlebox.
+//Headers: h1: dev_id
+//fwd (portid): forward to port ID.
+
+//Define authorized users
+def list0 := [ 0001 0002 0003 ]
+
+if match (h1 in list0) then fwd2  else fwd1

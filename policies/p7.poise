@@ -1,0 +1,4 @@
+//P7: Conduct DPI if the camera is on.
+//Headers: h1, camera_status. 1: ON, 0: OFF
+
+if match (h1 == 1) then fwd2 else fwd1

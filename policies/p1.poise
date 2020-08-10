@@ -1,0 +1,7 @@
+//P1: Block traffic in work hours. Accept if time in [9, 17], deny otherwise.
+//Headers: h1: timestamp in 24-hour format
+//Default: Accept, and forward to port 0
+
+if match (h1 < 9) then drop else fwd1
+
+if match (h1 > 17) then drop else fwd1

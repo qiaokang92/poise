@@ -1,0 +1,12 @@
+//P3: Distance-based access control. Accept if 100<lat<105 and 200<lon<210
+//Headers: h1: lat, h2: lon
+//Since Tofino doesn't support multiplication, we'll use > and < instead.
+//Default: fwd1
+
+if match (h1 < 100) then drop else fwd1
+
+if match (h1 > 105) then drop else fwd1
+
+if match (h2 < 200) then drop else fwd1
+
+if match (h2 > 210) then drop else fwd1
