@@ -60,7 +60,7 @@ Next, copy these two p4 files to the Tofino SDE folder and invoke `p4_build.sh`
 to compile `poise.p4`.
 The `p1.p4` will be compiled together with `poise.p4`.
 ```
-./p4_build.sh -p test_poise_release/poise.p4
+./p4_build.sh -p poise.p4
 ```
 
 After the compilation finishes, we can load the P4 program into switch:
@@ -82,7 +82,7 @@ pd eval_h1_tab_rec0_id0 add_entry set_ctx_dec poise_h_h1_start 0 poise_h_h1_end 
 pd eval_h1_tab_rec0_id1 add_entry set_ctx_dec poise_h_h1_start 17 poise_h_h1_end 10000 priority 0 action_x 15 entry_hdl 1
 ```
 
-Add forwarding rules to the switch:
+Add forwarding rules to the switch. port 0 is the port of the server and 129 is the drop port. Modify port number based on your topology.
 ```
 pd enforce_cache_dec_tab add_entry forward_to_port meta_cache_dec 0 action_port 0
 pd enforce_conn_dec_tab set_default_action forward_to_port action_port 129
